@@ -1,9 +1,8 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Play">
     <ion-content>
         <section class="padding game-wrapper">
             <div class="row" ng-repeat="i in [0, 1, 2]">
                 <div class="col" ng-repeat="j in [0, 1, 2]" ng-click="setCell({{i*3+j}})">
-                    <!-- <p>{{}}</p> -->
                     <i ng-if="cells[i*3 + j].turn == 'O'" class="icon ion-ios-circle-outline"></i>
                     <i ng-if="cells[i*3 + j].turn == 'X'" class="icon ion-ios-close-outline"></i>
                 </div>
