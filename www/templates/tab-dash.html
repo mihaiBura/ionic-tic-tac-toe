@@ -1,28 +1,29 @@
 <ion-view view-title="Dashboard">
-  <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
-      <div class="item item-body">
-        <div>
-          There is a fire in <b>sector 3</b>
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
-    </div>
-  </ion-content>
+    <ion-content>
+        <section class="padding game-wrapper">
+            <div class="row" ng-repeat="i in [0, 1, 2]">
+                <div class="col" ng-repeat="j in [0, 1, 2]" ng-click="setCell({{i*3+j}})">
+                    <!-- <p>{{}}</p> -->
+                    <i ng-if="cells[i*3 + j].turn == 'O'" class="icon ion-ios-circle-outline"></i>
+                    <i ng-if="cells[i*3 + j].turn == 'X'" class="icon ion-ios-close-outline"></i>
+                </div>
+            </div>
+        </section>
+        <section class="game-status" ng-if="win">
+            <button class="button button-full button-royal icon-left">
+                <span ng-if="win == 'O'">
+                    <i class="icon ion-ios-circle-outline"></i> Wins!
+                </span>
+                <span ng-if="win == 'X'">
+                    <i class="icon ion-ios-close-outline"></i> Wins!
+                </span>
+                <span ng-if="win == 'tie'">
+                    It's a tie.
+                </span>
+            </button>
+            <button class="button button-clear button-full button-royal icon-left" ng-click="restartGame()">
+                <i class="icon ion-ios-refresh"></i> Play Again
+            </button>
+        </section>
+    </ion-content>
 </ion-view>

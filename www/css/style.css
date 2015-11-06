@@ -1,1 +1,24 @@
 /* Empty. Add your own CSS if you like */
+
+.game-wrapper {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.game-wrapper .row:nth-child(2) {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.game-wrapper .col {
+    height: 70px;
+    font-size: 32px;
+    line-height: 70px;
+    text-align: center;
+    color: #6b46e5;
+}
+
+.game-wrapper .col:nth-child(2) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
